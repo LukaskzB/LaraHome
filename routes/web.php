@@ -20,12 +20,11 @@ Route::post('/logar', 'App\Http\Controllers\UsuarioController@login');
 Route::post('/cadastrar', 'App\Http\Controllers\UsuarioController@cadastrar');
 
 Route::group(['middleware' => ['autenticacao']], function () {
-
     Route::get('/perfil', 'App\Http\Controllers\UsuarioController@perfil');
     Route::post('/perfil/nome/{id}', 'App\Http\Controllers\UsuarioController@atualizarNome');
     Route::post('/perfil/email/{id}', 'App\Http\Controllers\UsuarioController@atualizarEmail');
     Route::post('/perfil/senha/{id}', 'App\Http\Controllers\UsuarioController@atualizarSenha');
-    Route::post('/perfil/excluir/{id}', 'App\Http\Controllers\UsuarioController@excluirConta');
+    Route::get('/perfil/excluir/{id}', 'App\Http\Controllers\UsuarioController@excluirConta');
 
     Route::get('/alugueis', 'App\Http\Controllers\AluguelController@index');
     Route::post('/alugueis/pesquisar', 'App\Http\Controllers\AluguelController@search');

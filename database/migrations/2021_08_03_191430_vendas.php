@@ -27,7 +27,7 @@ class Vendas extends Migration
             $table->integer('valor');
             $table->string('descricao', 300);
             $table->bigInteger('vendido')->unsigned()->nullable();
-            $table->foreign('vendido')->references('id')->on('usuario');
+            $table->foreign('vendido')->references('id')->on('usuario')->onDelete('cascade');
         });
     }
 

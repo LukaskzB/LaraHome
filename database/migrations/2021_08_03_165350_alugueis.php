@@ -29,7 +29,7 @@ class Alugueis extends Migration
             $table->integer('carros');
             $table->integer('dormitorios');
             $table->bigInteger('alugado')->unsigned()->nullable();
-            $table->foreign('alugado')->references('id')->on('usuario');
+            $table->foreign('alugado')->references('id')->on('usuario')->onDelete('cascade');
         });
     }
 
